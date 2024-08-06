@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 # from selenium.common.exceptions import TimeoutException
 # from webdriver_manager.chrome import ChromeDriverManager
 from bs4 import BeautifulSoup as bs
@@ -28,7 +29,9 @@ total_jobs_count = ""
 last_avail_page = 0
 csv_full_path = ""
 
-driver = webdriver.Chrome()
+options = Options()
+options.add_argument("--headless=new")
+driver = webdriver.Chrome(options=options)
 page = None
 html = None
 
@@ -109,7 +112,7 @@ def retrieve_jobs(job_listings_wrapper):
                 if "year" in req_lowered:
                     years_of_exp_idx = re.search(r"\d", req)
                     job_experience = req[years_of_exp_idx.start()] if years_of_exp_idx is not None else None
-                elif any(keyword in req_lowered for keyword in ["fresh", "less"]):
+                elif any(keyword in req_lowered for keyword in ["fresh ", " less "]):
                     job_fresh_grad = True
         except Exception as e:
             # If the element with the "jobAdDetails" tag is not found in the DOM within 5 secs, throw an error
@@ -137,7 +140,7 @@ def retrieve_jobs(job_listings_wrapper):
                 "Location": ", ".join(job_location),
                 "Classification": job_classification.replace("(", "").replace(")",""),
                 "Salary": job_salary,
-                "Posted Date": str(parse(job_listing_date)).split(":")[0] + ":00:00",
+                "Posted Date": str(parse(job_listing_date)).split(" ")[0],
                 "Job ID": job_id,
                 "URL": "{0}/job/{1}".format(BASE_URL, job_id)
             }
