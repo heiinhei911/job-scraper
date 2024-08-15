@@ -41,7 +41,7 @@ The program in this part scrapes for full-time jobs that are found under a parti
 
 # Libraries/Frameworks Used
 
-Part I - Job Scraper: Python, Beautiful Soup, Selenium, Pandas
+Part I - Job Scraper: Python, Beautiful Soup, Selenium, Pandas, Scikit-learn, Spacy
 
 # Credits
 
