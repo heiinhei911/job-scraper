@@ -22,7 +22,7 @@ The program in this part scrapes for full-time jobs that are found under a parti
 ### Using the Program
 
 1.  Run the program by running `python job-scraper.py` in the terminal
-2.  Enter the keyword that you would like to search for (e.g., business analyst)
+2.  Enter the keywords that you would like to search for (e.g., business analyst)
 
     ![Job Title Input](./images/job_title_input.png)
 
@@ -35,9 +35,24 @@ The program in this part scrapes for full-time jobs that are found under a parti
 
     _(This step could take quite a while depending on a number of factors such as the number of job postings you are scraping, your internet speed, the specification of your machine, etc.)_
 
-5.  Once all the pages have finished processing, all the data will be saved in _\[the keyword you have inputted in step 2\].csv_ under the `jobs/` directory
+5.  Once all the pages have been processed, all the data will be saved in a `[the keyword you have inputted in step 2] + [today's date]/` folder under the `jobs/` directory
 
     ![Scraping Completed](./images/scraping_completed.png)
+
+# Output Files
+
+After the scraping has been completed, you will find two files under the newly created folder: **output.csv** and **stats.xlsx**.
+
+![Output Files](./images/output_files.png)
+
+The **output** CSV contains all the scraped data related to your keywords. This includes _Title, Company, Years of Experience Required, Location, Salary_, etc. of a job.
+
+The **stats** Excel file contains two sheets:
+
+- the first sheet (named _"Common_Word_Freq"_) is 50 of the most frequently occurring common words from all the scraped job descriptions, along with their frequency count
+- the second sheet (named _"Org_Word_Freq"_) is a summary of all the most frequently occurring words from all scraped job descriptions that correspond to the "ORG" named entity in SpaCy (in other words, these words are commonly associated with companies, agencies, institutions, etc.), along with their frequency count
+
+  _(The frequency counts in both sheets have been arranged in an descending order)_
 
 # Libraries/Frameworks Used
 
