@@ -81,13 +81,13 @@ def retrieve_jobs(job_listings_wrapper, job_error_ids, all_job_descriptions, all
         job_description = globals.html.select_one('div[data-automation="jobAdDetails"]').get_text()
         all_job_descriptions.append(job_description)
         # print(requirements_list)
-        # print(get_most_frequent_words(requirements_list))
-        # for req in job_description:
         job_description_lowered = job_description.lower()
-        if "year" in job_description_lowered:
-            years_of_exp_idx = re.search(r"\d", job_description)
-            job_experience = job_description[years_of_exp_idx.start()] if years_of_exp_idx is not None else None
-        elif any(keyword in job_description_lowered for keyword in ["fresh ", "less experience"]):
+        # if "year" in job_description_lowered:
+        years_of_exp_idx = re.search(r"(\b\d+).{0,50}(?=year).{0,100}(?=experience)", job_description_lowered)
+        # print(years_of_exp_idx)
+        job_experience = years_of_exp_idx.group(1) if years_of_exp_idx is not None else None
+        # print(job_experience)
+        if any(keyword in job_description_lowered for keyword in ["fresh ", "less experience"]):
             job_fresh_grad = True
 
         # Extract job details from their respective locations
