@@ -49,12 +49,19 @@ After the scraping has been completed, you will find two files under the newly c
 
 The **output** CSV contains all the scraped data related to your keywords. This includes _Title, Company, Years of Experience Required, Location, Salary_, etc. of a job.
 
+![Scraped Data](./images/scraped_data.png)
+
 The **stats** Excel file contains two sheets:
 
 - the first sheet (named _"Common_Word_Freq"_) is 50 of the most frequently occurring common words from all the scraped job descriptions, along with their frequency count
+
+![Common Words](./images/common_words.png)
+
 - the second sheet (named _"Org_Word_Freq"_) is a summary of all the most frequently occurring words from all scraped job descriptions that correspond to the "ORG" named entity in SpaCy (in other words, these words are commonly associated with companies, agencies, institutions, etc.), along with their frequency count
 
-  _(The frequency counts in both sheets have been arranged in an descending order)_
+![Org Words](./images/org_words.png)
+
+_(The frequency counts in both sheets have been arranged in an descending order)_
 
 # Libraries/Frameworks Used
 
