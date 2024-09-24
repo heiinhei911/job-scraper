@@ -49,7 +49,7 @@ After the scraping has been completed, you will find two files under the newly c
 
 The **output** CSV contains all the scraped data related to your keywords. This includes _Title, Company, Years of Experience Required, Location, Salary_, etc. of a job.
 
-![Scraped Data](./images/scraped_data.png)
+![Scraped Data](./images/scraped_data_excel.png)
 
 The **stats** Excel file contains two sheets:
 
