@@ -2,6 +2,8 @@
 
 **Click [here](https://github.com/heiinhei911/job-insights) to see Part II.**
 
+**This project and its data are intended for educational purposes only.**
+
 This is a customizable web scraper for full-time jobs on JobsDB.com HK with in-depth analysis.
 
 This project is split into two parts: the **Job Scraper** _(this project)_ and the **Data Analysis** using the data scraped from the first part.
@@ -59,7 +61,5 @@ The **stats** Excel file contains two sheets:
 Part I - Job Scraper: Python, Beautiful Soup, Selenium, Pandas, Scikit-learn, Spacy
 
 # Credits
-
-This project and its data are intended for educational purposes only.
 
 All data come from JobsDB.com HK. All rights reserved to JobsDB.com HK.
