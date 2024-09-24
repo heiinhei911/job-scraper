@@ -2,7 +2,7 @@
 
 **Click [here](https://github.com/heiinhei911/job-insights) to see Part II.**
 
-**This project and its data are intended for educational purposes only.**
+**DISCLAIMER: This project and its data are intended for educational purposes only.**
 
 This is a customizable web scraper for full-time jobs on JobsDB.com HK with in-depth analysis.
 
